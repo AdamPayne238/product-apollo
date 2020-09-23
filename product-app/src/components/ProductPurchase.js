@@ -6,6 +6,7 @@ const ProductPurchase = () => {
     return(
         <div>
             <h1>ProductPurchase</h1>
+            
         </div>
     )
 }
