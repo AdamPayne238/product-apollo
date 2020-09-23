@@ -20,7 +20,7 @@ const ProductList = () => {
                 <>
                     {data.products.map(product => (
                         <Product
-                            product={product.id}
+                            key={product.id}
                             product={product}
                         />
                     ))}            

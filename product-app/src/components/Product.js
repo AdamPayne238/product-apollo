@@ -10,13 +10,11 @@ const Product = props => {
 
     return(
         <div className="product-list">              
-            <Link  key={props.product.id} to={{
+            <Link  to={{
                 pathname: `/products/${props.product.id}/details`
                 }}>
-                <div key={props.product.id} className="product">
+                <div  className="product">
                     <h1>{props.product.name}</h1>
-                
-
                     <p>Code: {props.product.code}</p>
                     <p>Cost: ${props.product.cost}</p>
                     <p>{props.product.description}</p>
