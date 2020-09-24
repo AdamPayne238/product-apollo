@@ -1,7 +1,7 @@
 import React from 'react'
-import ProductList from './components/ProductList'
-import ProductDetails from './components/ProductDetails'
-import ProductPurchase from './components/ProductPurchase'
+import ProductList from './components/product/ProductList'
+import ProductDetails from './components/product/ProductDetails'
+import ProductPurchase from './components/forms/ProductPurchase'
 import { Route, useLocation } from 'react-router-dom'
 
 
@@ -16,7 +16,7 @@ function App() {
       <Route exact path='/products' component={ProductList} />
       <Route exact path='/products/:id/details' component={ProductDetails} />
       <Route exact path='/products/:id/purchase' component={ProductPurchase} />
-
+      
     </div>
   )
 }
