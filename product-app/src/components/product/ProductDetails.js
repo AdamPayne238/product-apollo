@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { PRODUCT_DETAILS } from '../resolvers/Resolvers'
+import { PRODUCT_DETAILS } from '../../resolvers/Resolvers'
 import { Link } from 'react-router-dom'
 
 

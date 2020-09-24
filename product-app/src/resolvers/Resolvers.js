@@ -15,7 +15,6 @@ export const PRODUCTS = gql`
     }
 `
 
-
 // QUERY PRODUCT DETAILS
 export const PRODUCT_DETAILS = gql`
     query product($id: String!){
@@ -34,7 +33,6 @@ export const PRODUCT_DETAILS = gql`
     }
 `
 
-
 // CREATE ORDER
 export const CREATE_ORDER = gql`
     mutation CREATE_ORDER(
@@ -52,7 +50,6 @@ export const CREATE_ORDER = gql`
     }
 `
 
-
 // CREATE PHONE
 export const CREATE_PHONE = gql`
     mutation CREATE_PHONE(
@@ -67,14 +64,13 @@ export const CREATE_PHONE = gql`
             contact: $contact
             order_id: $order_id
         ){
+            id
             number
             type
             contact
-            order_id
         }
     }
 `
-
 
 // CREATE SHIPPING
 export const CREATE_SHIPPING = gql`
@@ -96,11 +92,9 @@ export const CREATE_SHIPPING = gql`
             city
             state
             zipcode
-            order_id
         }
     }
 `
-
 
 // CREATE BILLING
 export const CREATE_BILLING = gql`
@@ -122,11 +116,9 @@ export const CREATE_BILLING = gql`
             city
             state
             zipcode
-            order_id
         }
     }
 `
-
 
 // CREATE PURCHASE
 export const CREATE_PURCHASE = gql`
@@ -142,7 +134,6 @@ export const CREATE_PURCHASE = gql`
         ){
             code
             quantity
-            order_id
         }
     }
 `
