@@ -16,7 +16,10 @@ import CreateBilling from './sub/CreateBilling'
 import CreatePurchase from './sub/CreatePurchase'
 
 
-const ProductPurchase = () => {
+const ProductPurchase = props => {
+
+    // Product Id
+    const { id } = props.match.params
 
     // Order Id
     const [ orderId, setOrderId ] = useState('')
@@ -55,11 +58,6 @@ const ProductPurchase = () => {
     // Create Purchase State
     const [ code, setCode ] = useState('')
     const [ quantity, setQuantity ] = useState('')
-
-
-    useEffect(() => {
-        console.log("USEEFFEVT STATE", orderId)
-    }, [orderId])
 
 
     const handleSubmit = event => {
@@ -123,110 +121,10 @@ const ProductPurchase = () => {
                 }
             }).then(res => {
                 console.log("createPurchase res", res)
+                props.history.push(`/products/${id}/purchase/complete`)
             })
         } 
     }
-
-
-    // const handleOrder = event => {
-    //     event.preventDefault()
-    //     createOrder({
-    //         variables: {
-    //             customer_name: name,
-    //             customer_email: email
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log("CREATE_ORDER res", res)
-    //         setOrderId(res.data.createOrder.id)
-    //         setStep(2)
-    //     })
-    //     .catch(err => {
-    //         console.log("CREATE_ORDER err", err)
-
-    //     })
-    // }
-
-    // const handlePhone = event => {
-    //     event.preventDefault()
-    //     createPhone({
-    //         variables: {
-    //             number: parseInt(number),
-    //             type: type,
-    //             contact: contact,
-    //             order_id: orderId
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log("CREATE PHONE RES", res)
-    //         setStep(3)
-    //     })
-    //     .catch(err => {
-    //         console.log("Handle Sub Forms Err", err)
-    //     })
-    // }
-
-    // const handleShipping = event => {
-    //     event.preventDefault()
-    //     createShipping({
-    //         variables: {
-    //             street: shippingStreet,
-    //             city: shippingCity,
-    //             state: shippingState,
-    //             zipcode: parseInt(shippingZipcode),
-    //             order_id: orderId
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log("CREATE_SHIPPINGres", res)
-    //         setStep(4)
-       
-    //     })
-    //     .catch(err => {
-    //         console.log("CREATE_SHIPPING err", err)
-
-    //     })
-    // }
-
-    // const handleBilling = event => {
-    //     event.preventDefault()
-    //     createBilling({
-    //         variables: {
-    //             street: billingStreet,
-    //             city: billingCity,
-    //             state: billingState,
-    //             zipcode: parseInt(billingZipcode),
-    //             order_id: orderId
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log("createBilling res", res)
-    //         setStep(5)
-    //     })
-    //     .catch(err => {
-    //         console.log("createBilling err", err)
-
-    //     })
-    // }
-
-    // const handlePurchase = event => {
-    //     event.preventDefault()
-    //     createPurchase({
-    //         variables: {
-    //             code: parseInt(code),
-    //             quantity: parseInt(quantity),
-    //             order_id: orderId
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log("createPurchase res", res)
-    //         setStep(5)
-    //     })
-    //     .catch(err => {
-    //         console.log("createPurchase err", err)
-
-    //     })
-    // }
 
 
     return(
@@ -312,7 +210,7 @@ const ProductPurchase = () => {
                 </form>
             </div>
             )}
-    
+
         </div>
 
     )
