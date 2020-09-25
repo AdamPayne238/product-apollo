@@ -7,41 +7,43 @@ const CreateBilling = props => {
 
         <div>
 
-            <label>
-                Street:
+            <h1>Billing Address</h1>
+
+            <div>
+                <h2>Street</h2>
                 <input
                     type="text"
                     value={props.billingStreet}
                     onChange={e => props.setBillingStreet(e.target.value)}
                 />
-            </label>
+            </div>
 
-            <label>
-                City:
+            <div>
+                <h2>City</h2>
                 <input
                     type="text"
                     value={props.billingCity}
                     onChange={e => props.setBillingCity(e.target.value)}
                 />  
-            </label>
+            </div>
 
-            <label>
-                State:
+            <div>
+                <h2>State</h2>
                 <input
                     type="text"
                     value={props.billingState}
                     onChange={e => props.setBillingState(e.target.value)}
                 />
-            </label>
+            </div>
 
-            <label>
-                Zipcode:
+            <div>
+                <h2>Zipcode</h2>
                 <input
                     type="text"
                     value={props.billingZipcode}
                     onChange={e => props.setBillingZipcode(e.target.value)}
                 />  
-            </label>
+            </div>
 
         </div>
         

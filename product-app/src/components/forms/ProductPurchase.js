@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation, useQuery } from '@apollo/react-hooks'
 import { 
+        PRODUCT,
         CREATE_ORDER, 
         CREATE_PHONE,
         CREATE_SHIPPING,
         CREATE_BILLING,
         CREATE_PURCHASE,
-                        } from '../../resolvers/Resolvers'
+        CREATE_COMPLETE,
+} from '../../resolvers/Resolvers'
 
 // Sub Components
 import CreateOrder from './sub/CreateOrder'
@@ -15,11 +17,21 @@ import CreateShipping from './sub/CreateShipping'
 import CreateBilling from './sub/CreateBilling'
 import CreatePurchase from './sub/CreatePurchase'
 
+// Styling
+import './Forms.scss'
+
 
 const ProductPurchase = props => {
 
     // Product Id
     const { id } = props.match.params
+
+    // Query
+    const { loading, data } = useQuery(PRODUCT, {
+        variables: {
+            id: id
+        }
+    })
 
     // Order Id
     const [ orderId, setOrderId ] = useState('')
@@ -33,6 +45,7 @@ const ProductPurchase = props => {
     const [ createShipping ] = useMutation(CREATE_SHIPPING)
     const [ createBilling ] = useMutation(CREATE_BILLING)
     const [ createPurchase ] = useMutation(CREATE_PURCHASE)
+    const [ createComplete ] = useMutation(CREATE_COMPLETE)
 
     // Create Order State
     const [ name, setName ] = useState('')
@@ -59,9 +72,9 @@ const ProductPurchase = props => {
     const [ code, setCode ] = useState('')
     const [ quantity, setQuantity ] = useState('')
 
-
     const handleSubmit = event => {
         event.preventDefault()
+        setCode(data.product.code)
         if (step === 1){
             createOrder({
                 variables: {
@@ -76,7 +89,6 @@ const ProductPurchase = props => {
         } else if (step === 2){
             createPhone({
                 variables: {
-                    
                     number: parseInt(number),
                     type: type,
                     contact: contact,
@@ -121,18 +133,25 @@ const ProductPurchase = props => {
                 }
             }).then(res => {
                 console.log("createPurchase res", res)
-                props.history.push(`/products/${id}/purchase/complete`)
+                createComplete({
+                    variables: {
+                        order_total: parseInt(quantity * data.product.cost),
+                        order_id: orderId
+                    }
+                })
+                props.history.push(`/products/${id}/purchase/complete`, {orderId: orderId})
             })
-        } 
+        }
     }
+
 
 
     return(
 
-        <div>
+        <div className="form-container">
 
             {step === 1 && (
-            <div>
+            <div className="form">
                 <form onSubmit={handleSubmit}>
                     <CreateOrder 
                         name={name} 
@@ -146,7 +165,7 @@ const ProductPurchase = props => {
             )}
 
             {step === 2 && (
-            <div>
+            <div className="form">
                 <form onSubmit={handleSubmit}>
                     <CreatePhone
                         number={number}
@@ -162,7 +181,7 @@ const ProductPurchase = props => {
             )}
 
             {step === 3 && (
-            <div>
+            <div className="form">
                 <form onSubmit={handleSubmit}>
                     <CreateShipping
                         shippingStreet={shippingStreet}
@@ -180,7 +199,7 @@ const ProductPurchase = props => {
             )}
 
             {step === 4 && (
-            <div>
+            <div className="form">
                 <form onSubmit={handleSubmit}>
                     <CreateBilling
                         billingStreet={billingStreet}
@@ -198,7 +217,7 @@ const ProductPurchase = props => {
             )}
 
             {step === 5 && (
-            <div>
+            <div className="form">
                 <form onSubmit={handleSubmit}>
                     <CreatePurchase
                         code={code}

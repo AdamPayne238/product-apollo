@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { PRODUCT_DETAILS } from '../../resolvers/Resolvers'
 import { Link } from 'react-router-dom'
+import './Product.scss'
 
 
 const ProductDetails = props => {
@@ -21,8 +22,7 @@ const ProductDetails = props => {
     console.log("DETAILS DATA", data.product.name)
 
     return(
-        <div>
-            <h1>ProductDetails</h1>
+        <div className="product-details-container">
             {!loading && data && (
                 <div>
                     <h1>{data.product.name}</h1>
@@ -33,7 +33,7 @@ const ProductDetails = props => {
                     <p>{data.product.pushed_product}</p>
                     <p>{data.product.callback}</p>
                     <p>{data.product.category}</p>
-
+                    
                     {data.product.inventory_on_hand > 0 && (
                         <Link to={{ pathname: `/products/${id}/purchase` }} >
                             <button>Purchase</button>

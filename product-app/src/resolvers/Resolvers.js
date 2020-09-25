@@ -15,6 +15,18 @@ export const PRODUCTS = gql`
     }
 `
 
+// QUERY PRODUCT by ID
+export const PRODUCT = gql`
+    query product($id: String!){
+        product(id: $id){
+            id
+            name
+            cost
+            code
+        }
+    }
+`
+
 // QUERY PRODUCT DETAILS
 export const PRODUCT_DETAILS = gql`
     query product($id: String!){
@@ -29,6 +41,27 @@ export const PRODUCT_DETAILS = gql`
             callback
             category
             inventory_on_hand
+        }
+    }
+`
+
+// QUERY ORDER by ID
+export const ORDER = gql`
+    query order($id: String!){
+        order(id: $id){
+            customer_name
+            customer_email
+            customer_phone{
+                number
+            }
+            purchase_products{
+                code
+                quantity
+            }
+            order_confirmation{
+                confirmation_code
+                order_total
+            }
         }
     }
 `
@@ -134,6 +167,22 @@ export const CREATE_PURCHASE = gql`
         ){
             code
             quantity
+        }
+    }
+`
+
+// CREATE COMPLETE
+export const CREATE_COMPLETE = gql`
+    mutation CREATE_COMPLETE(
+        $order_total: Int!
+        $order_id: String!
+    ){
+        createComplete(
+            order_total: $order_total
+            order_id: $order_id
+        ){
+            confirmation_code
+            order_total
         }
     }
 `

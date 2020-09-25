@@ -7,23 +7,25 @@ const CreateOrder = props => {
 
         <div>
 
-            <label>
-                Name:
+            <h1>Customer Information</h1>
+
+            <div>
+                <h2>Name</h2>
                 <input
                     type="text"
                     value={props.name}
                     onChange={e => props.setName(e.target.value)}
                 />
-            </label>
+            </div>
 
-            <label>
-                Email:
+            <div>
+                <h2>Email</h2>
                 <input
                     type="text"
                     value={props.email}
                     onChange={e => props.setEmail(e.target.value)}
                 />  
-            </label>
+            </div>
 
         </div>
         

@@ -3,7 +3,7 @@ import ProductList from './components/product/ProductList'
 import ProductDetails from './components/product/ProductDetails'
 import ProductPurchase from './components/forms/ProductPurchase'
 import PurchaseComplete from './components/complete/PurchaseComplete'
-import { Route, useLocation } from 'react-router-dom'
+import { Route, useLocation, Link } from 'react-router-dom'
 
 
 function App() {
@@ -13,6 +13,11 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* <Link to='/products'>
+      Product List
+      </Link> */}
+
 
       <Route exact path='/products' component={ProductList} />
       <Route exact path='/products/:id/details' component={ProductDetails} />
