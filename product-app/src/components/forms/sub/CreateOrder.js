@@ -8,9 +8,8 @@ const CreateOrder = props => {
         <div>
 
             <h1>Customer Information</h1>
-
-            <div>
-                <h2>Name</h2>
+            <div >
+                <h2>Full Name</h2>
                 <input
                     type="text"
                     value={props.name}

@@ -27,7 +27,7 @@ const ProductPurchase = props => {
     const { id } = props.match.params
 
     // Query
-    const { loading, data } = useQuery(PRODUCT, {
+    const { data } = useQuery(PRODUCT, {
         variables: {
             id: id
         }
@@ -159,7 +159,9 @@ const ProductPurchase = props => {
                         setName={setName} 
                         setEmail={setEmail} 
                     />
-                    <input type="submit" value="Submit" />
+                    {name && email && (
+                        <input type="submit" value="Submit" />
+                    )}
                 </form>
             </div>
             )}
@@ -175,7 +177,9 @@ const ProductPurchase = props => {
                         setType={setType}
                         setContact={setContact}
                     />
-                    <input type="submit" value="Submit" />
+                    {number !== isNaN(number) && type && contact && (
+                    <button type="submit" value="Submit" />
+                    )}
                 </form>
             </div>
             )}
@@ -193,7 +197,9 @@ const ProductPurchase = props => {
                         setShippingState={setShippingState}
                         setShippingZipcode={setShippingZipcode}
                     />
+                    {shippingStreet && shippingCity && shippingState && shippingZipcode && (
                     <input type="submit" value="Submit" />
+                    )}
                 </form>
             </div>
             )}
@@ -211,7 +217,9 @@ const ProductPurchase = props => {
                         setBillingState={setBillingState}
                         setBillingZipcode={setBillingZipcode}
                     />
+                    {billingStreet && billingCity && billingState && billingZipcode && (
                     <input type="submit" value="Submit" />
+                    )}
                 </form>
             </div>
             )}
@@ -225,7 +233,9 @@ const ProductPurchase = props => {
                         setCode={setCode}
                         setQuantity={setQuantity}
                     />
+                    {code !== isNaN(code) && quantity !== isNaN(quantity) && (
                     <input type="submit" value="Submit" />
+                    )}
                 </form>
             </div>
             )}
