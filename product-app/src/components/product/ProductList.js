@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { PRODUCTS } from '../../resolvers/Resolvers'
 import Product from './Product'
+import './Product.scss'
 
 
 const ProductList = () => {
@@ -14,8 +15,10 @@ const ProductList = () => {
 
     console.log(data.products)
     return(
+        
+       
+
         <div className="product-list-container">
-            <h1>ProductList</h1>
             {!loading && data && (
                 <>
                     {data.products.map(product => (

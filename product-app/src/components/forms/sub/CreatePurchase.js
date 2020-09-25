@@ -7,23 +7,25 @@ const CreatePurchase = props => {
 
         <div>
 
-            <label>
-                Code:
+            <h1>Purchase Information</h1>
+
+            <div>
+                <h2>Product Code</h2>
                 <input
                     type="text"
                     value={props.code}
                     onChange={e => props.setCode(e.target.value)}
                 />
-            </label>
+            </div>
 
-            <label>
-                Quantity:
+            <div>
+                <h2>Quantity</h2>
                 <input
                     type="text"
                     value={props.quantity}
                     onChange={e => props.setQuantity(e.target.value)}
                 />  
-            </label>
+            </div>
         
         </div>
         
