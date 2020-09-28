@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './Product.scss'
 
 
-
 const Product = props => {
 
     const formatNumber = (x) => {

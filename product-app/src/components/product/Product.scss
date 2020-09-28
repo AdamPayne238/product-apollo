@@ -6,7 +6,15 @@
     justify-content: center;
 
     .product-list{
+
+        h1{
+            font-size: 2.5rem;
+            border-bottom: 3px solid black;
+        }
       
+        p{
+            font-size: 1.8rem;
+        }
 
         a{
             text-decoration: none;
@@ -16,7 +24,7 @@
         .product{
             background: white;
             box-shadow: 10px 5px 5px #162540;
-            border: 4px solid #A1C5DC;
+            border: 4px solid black;
             border-radius: 2rem;
             width: 25rem;
             height: 31rem;
@@ -34,13 +42,26 @@
 .product-details-container{
     display: flex;
     justify-content: center;
-    padding: 2rem;
     text-align: center;
 
-    h1{
-        font-size: 3rem;
+    .product-details{
+        width: 50rem;
+
+        h1{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+        
+        button{
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            height: 3rem;
+            width: 13rem;
+        }
+
     }
-    p{
-        font-size: 2rem;
-    }
+
+
 }

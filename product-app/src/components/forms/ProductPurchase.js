@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useMutation, useQuery } from '@apollo/react-hooks'
 import { 
         PRODUCT,
@@ -144,7 +144,10 @@ const ProductPurchase = props => {
         }
     }
 
-
+    // Check if string contains only numbers
+    var isNumber = (str) => {
+        return /^\d+$/.test(str)
+    }
 
     return(
 
@@ -160,7 +163,7 @@ const ProductPurchase = props => {
                         setEmail={setEmail} 
                     />
                     {name && email && (
-                        <input type="submit" value="Submit" />
+                        <input id="button" type="submit" value="Submit" />
                     )}
                 </form>
             </div>
@@ -177,8 +180,8 @@ const ProductPurchase = props => {
                         setType={setType}
                         setContact={setContact}
                     />
-                    {number !== isNaN(number) && type && contact && (
-                    <button type="submit" value="Submit" />
+                    {isNumber(number) && type && (
+                        <input id="button" type="submit" value="Submit" />
                     )}
                 </form>
             </div>
@@ -197,7 +200,7 @@ const ProductPurchase = props => {
                         setShippingState={setShippingState}
                         setShippingZipcode={setShippingZipcode}
                     />
-                    {shippingStreet && shippingCity && shippingState && shippingZipcode && (
+                    {shippingStreet && shippingCity && shippingState && isNumber(shippingZipcode) && (
                     <input type="submit" value="Submit" />
                     )}
                 </form>
@@ -217,7 +220,7 @@ const ProductPurchase = props => {
                         setBillingState={setBillingState}
                         setBillingZipcode={setBillingZipcode}
                     />
-                    {billingStreet && billingCity && billingState && billingZipcode && (
+                    {billingStreet && billingCity && billingState && isNumber(billingZipcode) && (
                     <input type="submit" value="Submit" />
                     )}
                 </form>
@@ -233,7 +236,7 @@ const ProductPurchase = props => {
                         setCode={setCode}
                         setQuantity={setQuantity}
                     />
-                    {code !== isNaN(code) && quantity !== isNaN(quantity) && (
+                    {isNumber(code) && isNumber(quantity) && (
                     <input type="submit" value="Submit" />
                     )}
                 </form>
