@@ -19,18 +19,17 @@ const ProductDetails = props => {
         return <h2>Loading product list...</h2>
     }
 
-    console.log("DETAILS DATA", data.product.name)
-
+    console.log("DATA DETAILS", data.product.pushed_product)
     return(
         <div className="product-details-container">
             {!loading && data && (
-                <div>
+                <div className="product-details">
                     <h1>{data.product.name}</h1>
                     <p>Code: {data.product.code}</p>
                     <p>Type: {data.product.product_type}</p>
-                    <p>Cost: {data.product.cost}</p>
-                    <p>{data.product.description}</p>
-                    <p>Pushed Product: {data.product.pushed_product}</p>
+                    <p>Cost: ${data.product.cost}</p>
+                    <p>Description: {data.product.description}</p>
+                    <p>Pushed Product: {String(data.product.pushed_product)}</p>
                     <p>Callback: {data.product.callback}</p>
                     <p>Category: {data.product.category}</p>
                     

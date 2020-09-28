@@ -13,11 +13,8 @@ const ProductList = () => {
         return <h2>Loading product list...</h2>
     }
 
-    console.log(data.products)
     return(
         
-       
-
         <div className="product-list-container">
             {!loading && data && (
                 <>
