@@ -22,6 +22,11 @@ const ProductDetails = props => {
     console.log("DATA DETAILS", data.product.pushed_product)
     return(
         <div className="product-details-container">
+
+            <Link to='/products'>
+                Home
+            </Link>
+
             {!loading && data && (
                 <div className="product-details">
                     <h1>{data.product.name}</h1>
