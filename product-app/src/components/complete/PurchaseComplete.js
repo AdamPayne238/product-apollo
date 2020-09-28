@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { PRODUCT, ORDER } from '../../resolvers/Resolvers'
 import { useQuery } from '@apollo/react-hooks'
 import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 
 const PurchaseComplete = props => {
@@ -28,6 +30,8 @@ const PurchaseComplete = props => {
     return(
 
         <div>
+
+  
 
             <h1>Purchase Reciept</h1>
             {!loading && data && !orderLoading && orderData && (
@@ -58,6 +62,10 @@ const PurchaseComplete = props => {
                 
                 </div>
             )}
+
+            <Link to='/products'>
+                Home
+            </Link>
             
         </div>
     )
