@@ -86,7 +86,7 @@ export const CREATE_ORDER = gql`
 // CREATE PHONE
 export const CREATE_PHONE = gql`
     mutation CREATE_PHONE(
-        $number: Int!
+        $number: String!
         $type: String!
         $contact: Boolean!
         $order_id: String!
@@ -174,7 +174,7 @@ export const CREATE_PURCHASE = gql`
 // CREATE COMPLETE
 export const CREATE_COMPLETE = gql`
     mutation CREATE_COMPLETE(
-        $order_total: Int!
+        $order_total: Float!
         $order_id: String!
     ){
         createComplete(
