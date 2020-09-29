@@ -3,6 +3,7 @@ import { PRODUCT, ORDER } from '../../resolvers/Resolvers'
 import { useQuery } from '@apollo/react-hooks'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import './Complete.scss'
 
 
 
@@ -29,44 +30,43 @@ const PurchaseComplete = props => {
 
     return(
 
-        <div>
+        <div className="purchase-complete-container">
 
-  
-
-            <h1>Purchase Reciept</h1>
             {!loading && data && !orderLoading && orderData && (
-                <div>
-                    {console.log("Product Data", data), console.log("Order Data", orderData)}
-                    <h1>Product: {data.product.name}</h1>
-                    <h1>Price: ${data.product.cost}</h1>
-                    <h1>Name: {orderData.order.customer_name}</h1>
-                    <h1>Email: {orderData.order.customer_email}</h1>
+                
+                <div className="purchase-complete">
+                    <h1>Purchase Reciept</h1>
+                    <p>Product: {data.product.name}</p>
+                    <p>Price: ${data.product.cost}</p>
+                    <p>Name: {orderData.order.customer_name}</p>
+                    <p>Email: {orderData.order.customer_email}</p>
                     {orderData.order.customer_phone.map(info => (
                         <div key={info.id}>
-                            <h1>Phone Number: {info.number}</h1>
+                            <p>Phone Number: {info.number}</p>
                         </div>
                     ))}
                     {orderData.order.purchase_products.map(info => (
                         <div key={info.id}>
-                            <h1>Product Code: {info.code}</h1>
-                            <h1>Quantity: {info.quantity}</h1>
+                            <p>Product Code: {info.code}</p>
+                            <p>Quantity: {info.quantity}</p>
                         </div>
                     ))}
 
                     {orderData.order.order_confirmation.map(info => (
                         <div key={info.id}>
-                            {console.log(info.order_total)}
-                            <h1>Confirmation Code: {info.confirmation_code}</h1>
-                            <h1>Order Total: ${info.order_total}</h1>
+                            <p>Confirmation Code: {info.confirmation_code}</p>
+                            <p>Order Total: ${info.order_total}</p>
                         </div>
                     ))}
+
+                    <Link to='/products'>
+                        Home
+                    </Link>
                 
                 </div>
             )}
 
-            <Link to='/products'>
-                Home
-            </Link>
+         
             
         </div>
     )

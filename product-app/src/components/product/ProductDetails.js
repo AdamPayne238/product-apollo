@@ -22,13 +22,15 @@ const ProductDetails = props => {
     console.log("DATA DETAILS", data.product.pushed_product)
     return(
         <div className="product-details-container">
-
-            <Link to='/products'>
-                Home
-            </Link>
+         
 
             {!loading && data && (
                 <div className="product-details">
+
+                    <Link to='/products'>
+                        Home
+                    </Link>
+         
                     <h1>{data.product.name}</h1>
                     <p>Code: {data.product.code}</p>
                     <p>Type: {data.product.product_type}</p>
@@ -43,6 +45,7 @@ const ProductDetails = props => {
                             <button>Purchase</button>
                         </Link>
                     )}
+
                 </div>
             )}
         </div>
