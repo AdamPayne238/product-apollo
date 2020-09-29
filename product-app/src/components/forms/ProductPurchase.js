@@ -89,7 +89,7 @@ const ProductPurchase = props => {
         } else if (step === 2){
             createPhone({
                 variables: {
-                    number: parseInt(number),
+                    number: number,
                     type: type,
                     contact: contact,
                     order_id: orderId
@@ -135,7 +135,7 @@ const ProductPurchase = props => {
                 console.log("createPurchase res", res)
                 createComplete({
                     variables: {
-                        order_total: parseInt(quantity * data.product.cost),
+                        order_total: parseFloat(quantity * data.product.cost),
                         order_id: orderId
                     }
                 })

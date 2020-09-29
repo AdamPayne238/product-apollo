@@ -55,6 +55,7 @@ const PurchaseComplete = props => {
 
                     {orderData.order.order_confirmation.map(info => (
                         <div key={info.id}>
+                            {console.log(info.order_total)}
                             <h1>Confirmation Code: {info.confirmation_code}</h1>
                             <h1>Order Total: ${info.order_total}</h1>
                         </div>
