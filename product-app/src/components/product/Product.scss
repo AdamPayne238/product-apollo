@@ -41,14 +41,22 @@
 .product-details-container{
     display: flex;
     justify-content: center;
-    text-align: center;
+    // text-align: center;
 
     .product-details{
-        width: 50rem;
+        border: 4px solid black;
+        padding: 2rem;
+        text-align: center;
+        width: 30%;
+
+        a{
+            font-size: 1.8rem;
+        }
 
         h1{
-            font-size: 3rem;
-        }
+            font-size: 2.5rem;
+            border-bottom: 3px solid black;
+            text-align: center;        }
         p{
             font-size: 2rem;
         }
@@ -58,6 +66,7 @@
             font-size: 1.5rem;
             height: 3rem;
             width: 13rem;
+            
         }
 
     }
