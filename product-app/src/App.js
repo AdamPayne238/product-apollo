@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from './components/Home/NavBar'
 import ProductList from './components/product/ProductList'
 import ProductDetails from './components/product/ProductDetails'
 import ProductPurchase from './components/forms/ProductPurchase'
@@ -10,9 +11,9 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Switch>
-        
-        <Redirect exact from='/' to='/products' />
+        {/* <Redirect exact from='/' to='/products' /> */}
         <Route exact path='/products' component={ProductList} />
         <Route exact path='/products/:id/details' component={ProductDetails} />
         <Route exact path='/products/:id/purchase' component={ProductPurchase} />
