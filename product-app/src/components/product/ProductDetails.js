@@ -35,7 +35,7 @@ const ProductDetails = props => {
                     <p>Code: {data.product.code}</p>
                     <p>Type: {data.product.product_type}</p>
                     <p>Cost: ${data.product.cost}</p>
-                    <p>Description: {data.product.description}</p>
+                    <p>{data.product.description}</p>
                     <p>Pushed Product: {String(data.product.pushed_product)}</p>
                     <p>Callback: {data.product.callback}</p>
                     <p>Category: {data.product.category}</p>
