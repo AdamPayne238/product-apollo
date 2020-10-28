@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
+        
         <Redirect exact from='/' to='/products' />
         <Route exact path='/products' component={ProductList} />
         <Route exact path='/products/:id/details' component={ProductDetails} />
