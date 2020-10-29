@@ -1,10 +1,12 @@
 import React from 'react'
 import NavBar from './components/Home/NavBar'
+import Home from './components/Home/Home'
 import ProductList from './components/product/ProductList'
 import ProductDetails from './components/product/ProductDetails'
 import ProductPurchase from './components/forms/ProductPurchase'
 import PurchaseComplete from './components/complete/PurchaseComplete'
 import { Route, Switch, Redirect } from 'react-router-dom'
+import './App.scss'
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <NavBar />
       <Switch>
         {/* <Redirect exact from='/' to='/products' /> */}
+        <Route exact path='/home' component={Home} />
         <Route exact path='/products' component={ProductList} />
         <Route exact path='/products/:id/details' component={ProductDetails} />
         <Route exact path='/products/:id/purchase' component={ProductPurchase} />
