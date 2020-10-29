@@ -1,14 +1,59 @@
-nav{
-    border: 2px solid black;
-    height: 4rem;
+
+// Home
+.home-container{
+
+    .home-banner{
+        height: 50rem;
+        // width: 100%;
+        overflow: hidden;
+        
+
+        img{
+       
+          
+        }
+       
+    }
+
+}
+
+
+
+// NavBar
+.nav-container{
+    height: 2rem;
     display: flex;
-    justify-content: space-evenly;
-    a{
-        font-size: 2rem;
-        text-decoration: none;
-        color: black;
-        &:hover{
-            color: gray;
+    align-items: center;
+    z-index: 500;
+    justify-content: space-between;
+    margin: 2rem;
+
+
+
+    .nav-header{
+
+        h1{
+            font-size: 3rem;
+            text-align: center;
+            margin:auto;
         }
     }
+
+
+    .nav-links{
+    
+
+        a{
+            font-size: 2rem;
+            text-decoration: none;
+            color: black;
+            margin: 1rem;
+            border-bottom: 1px solid black;
+            &:hover{
+                color: gray;
+            }
+        }
+    }
+
+
 }

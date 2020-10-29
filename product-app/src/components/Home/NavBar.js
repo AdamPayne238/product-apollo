@@ -8,18 +8,25 @@ const NavBar = () => {
     let { pathname } = useLocation()
     
     return (
-        <div>
-            <nav>
+        <div className="nav-container">
+
+    
+            <div className="nav-header">
+                <h1>Fruit Spring</h1>
+            </div>
+
+            <div className="nav-links">
                 <Link to='/home'>Home</Link>
                 <Link to='/products'>Products</Link>
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact</Link>
-                {pathname.includes('/products') && (
+                {/* {pathname.includes('/products') && (
                     <div>
                         <h2>/products???</h2>
                     </div>
-                )}
-            </nav>
+                )} */}
+            </div>
+    
         </div>
     )
 }
