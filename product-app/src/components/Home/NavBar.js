@@ -20,11 +20,6 @@ const NavBar = () => {
                 <Link to='/products'>Products</Link>
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact</Link>
-                {/* {pathname.includes('/products') && (
-                    <div>
-                        <h2>/products???</h2>
-                    </div>
-                )} */}
             </div>
     
         </div>
