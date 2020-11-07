@@ -15,44 +15,52 @@ const Home = () => {
 
             <div className="home-banner">
                 <img src={banner} />
-            </div>
-
-            <div className="section-one">
-                <div className="section-one-text">
-                    <p>section one text</p>
-                </div>
-                <div className="section-one-img">
-                    <img src={imageOne} />
+                <div className="banner-text">
+                    Farm Fresh Produce Shipped Nation Wide
                 </div>
             </div>
 
-            {/* <div className="section-two">
-                <div className="section-two-text">
-                    <p>section two text</p>
+            <div className="main-content">
+
+                <div className="left-container">
+                    <div className="text-left">
+                        <p>lorem ispum  </p>
+                    </div>
+                    <div className="img-left">
+                        <img src={imageOne} />
+                    </div>
                 </div>
-                <div className="section-two-img">
-                    <img src={imageTwo} />
+
+                <div className="right-container">
+                    <div className="text-right">
+                        <p>section two text</p>
+                    </div>
+                    <div className="img-right">
+                        <img src={imageTwo} />
+                    </div>
                 </div>
+
+                <div className="left-container">
+                    <div className="text-left">
+                        <p>section three text</p>
+                    </div>
+                    <div className="img-left">
+                        <img src={imageThree} />
+                    </div>
+                </div>
+
+                <div className="right-container">
+                    <div className="text-right">
+                        <p>section four text</p>
+                    </div>
+                    <div className="img-right">
+                        <img src={imageFour} />
+                    </div>
+                </div>
+
             </div>
 
-            <div className="section-three">
-                <div className="section-three-text">
-                    <p>section three text</p>
-                </div>
-                <div className="section-three-img">
-                    <img src={imageThree} />
-                </div>
-            </div>
-
-            <div className="section-four">
-                <div className="section-four-text">
-                    <p>section four text</p>
-                </div>
-                <div className="section-four-img">
-                    <img src={imageFour} />
-                </div>
-            </div> */}
-
+            
         </div>
     )
 }
