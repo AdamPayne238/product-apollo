@@ -1,4 +1,51 @@
 
+// NavBar
+.nav-container{
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    z-index: 500;
+    justify-content: space-between;
+    background: #4169E1;
+
+        .nav-links-left{
+            margin-left: 5rem;
+            a{
+                color: #FFFEFD;
+                font-size: 1.5rem;
+                text-decoration: none;
+                margin: 1rem;
+                font-family: 'Big Shoulders Stencil Text';
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+
+        .nav-header{
+            h1{
+                color: #FFFEFD;
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+        
+        .nav-links-right{
+            margin-right: 5rem;
+            a{
+                color: #FFFEFD;
+                font-size: 1.5rem;
+                text-decoration: none;
+                margin: 1rem;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+
+}
+
+
 // Home
 .home-container{
 
@@ -10,7 +57,7 @@
         background: black;
 
         img{
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         .banner-text{
@@ -97,40 +144,3 @@
 
 
 
-// NavBar
-.nav-container{
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    z-index: 500;
-    justify-content: space-between;
-    margin: 2rem;
-
-
-
-    .nav-header{
-
-        h1{
-            font-size: 3rem;
-            text-align: center;
-            margin:auto;
-        }
-    }
-
-
-    .nav-links{
-    
-
-        a{
-            font-size: 2rem;
-            text-decoration: none;
-            color: black;
-            margin: 1rem;
-            &:hover{
-                color: gray;
-            }
-        }
-    }
-
-
-}

@@ -6,7 +6,6 @@ import imageThree from '../../global/images/abstract-fruit-3.jpg'
 import imageFour from '../../global/images/abstract-fruit-4.jpg'
 
 
-
 const Home = () => {
     console.log(banner)
 
