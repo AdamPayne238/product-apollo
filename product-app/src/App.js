@@ -18,19 +18,17 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        {/* <Redirect exact from='/' to='/products' /> */}
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/products' component={ProductList} />
-        <Route exact path='/products/:id/details' component={ProductDetails} />
-        <Route exact path='/products/:id/purchase' component={ProductPurchase} />
-        <Route exact path='/products/:id/purchase/complete' component={PurchaseComplete} />
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/contact' component={Contact} />
-
-        <Route exact path='/faq' component={FAQ} />
-
+        <Switch>
+          {/* <Redirect exact from='/' to='/products' /> */}
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/products' component={ProductList} />
+          <Route exact path='/products/:id/details' component={ProductDetails} />
+          <Route exact path='/products/:id/purchase' component={ProductPurchase} />
+          <Route exact path='/products/:id/purchase/complete' component={PurchaseComplete} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/contact' component={Contact} />
+          <Route exact path='/faq' component={FAQ} />
         </Switch>
     </div>
   )
