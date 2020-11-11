@@ -23,7 +23,7 @@ const Home = () => {
 
                 <div className="left-container">
                     <div className="text-left">
-                        <p>lorem ispum  </p>
+                        <p>Lorem ipsum dolor sit amet, pro accumsan inciderint ut. An dolores dissentiunt est, quas oporteat vel et, unum dicta his no. Eu impedit neglegentur vim, vidisse scripserit neglegentur nam at. Officiis expetendis pri ad. Te sit pertinacia repudiandae, noster essent epicurei in sea, dicat putant saperet eum ne.</p>
                     </div>
                     <div className="img-left">
                         <img src={imageOne} />
@@ -32,7 +32,7 @@ const Home = () => {
 
                 <div className="right-container">
                     <div className="text-right">
-                        <p>section two text</p>
+                        <p>Lorem ipsum dolor sit amet, pro accumsan inciderint ut. An dolores dissentiunt est, quas oporteat vel et, unum dicta his no. Eu impedit neglegentur vim, vidisse scripserit neglegentur nam at. Officiis expetendis pri ad. Te sit pertinacia repudiandae, noster essent epicurei in sea, dicat putant saperet eum ne.</p>
                     </div>
                     <div className="img-right">
                         <img src={imageTwo} />
@@ -41,7 +41,7 @@ const Home = () => {
 
                 <div className="left-container">
                     <div className="text-left">
-                        <p>section three text</p>
+                        <p>Lorem ipsum dolor sit amet, pro accumsan inciderint ut. An dolores dissentiunt est, quas oporteat vel et, unum dicta his no. Eu impedit neglegentur vim, vidisse scripserit neglegentur nam at. Officiis expetendis pri ad. Te sit pertinacia repudiandae, noster essent epicurei in sea, dicat putant saperet eum ne.</p>
                     </div>
                     <div className="img-left">
                         <img src={imageThree} />
@@ -50,7 +50,7 @@ const Home = () => {
 
                 <div className="right-container">
                     <div className="text-right">
-                        <p>section four text</p>
+                        <p>Lorem ipsum dolor sit amet, pro accumsan inciderint ut. An dolores dissentiunt est, quas oporteat vel et, unum dicta his no. Eu impedit neglegentur vim, vidisse scripserit neglegentur nam at. Officiis expetendis pri ad. Te sit pertinacia repudiandae, noster essent epicurei in sea, dicat putant saperet eum ne.</p>
                     </div>
                     <div className="img-right">
                         <img src={imageFour} />
