@@ -68,6 +68,8 @@
             color: white;
             font-size: 3rem;
             border-bottom: 0.1rem solid white;
+            // background: black;
+            opacity: 0.8;
         }
     
        
@@ -79,7 +81,6 @@
         text-align: center;
         flex-wrap: wrap;
 
-
         .left-container{
             margin: 5rem;
             display: flex;
@@ -88,18 +89,18 @@
             justify-content: space-evenly;
      
             .text-left{
-                width: 45rem;
-                height: 30rem;
+                width: 40rem;
+                height: 25rem;
                 // border: 1rem solid black;
                 p{
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
                 
             }
 
             .img-left{
-                width: 45rem;
-                height: 30rem;
+                width: 40rem;
+                height: 25rem;
                 text-align: center;
                 // border: 1rem dotted green;
                 img{
@@ -118,18 +119,18 @@
             justify-content: space-evenly;
         
             .text-right{
-                width: 45rem;
-                height: 30rem;
+                width: 40rem;
+                height: 25rem;
                 // border: 1rem solid black;
                 p{
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
     
             }
 
             .img-right{
-                width: 45rem;
-                height: 30rem;
+                width: 40rem;
+                height: 25rem;
                 text-align: center;
                 // border: 1rem dotted blue;
                 img{
