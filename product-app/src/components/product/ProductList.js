@@ -8,10 +8,13 @@ import './Product.scss'
 const ProductList = () => {
 
     const { loading, data } = useQuery(PRODUCTS)
+  
 
     if (loading){
         return <h2>Loading product list...</h2>
     }
+
+    console.log("data.products", data.products)
 
     return(
         
